@@ -13,7 +13,6 @@ const addToCartController = async (req, res) => {
             });
         }
 
-        // چیک کریں کہ یہ پراڈکٹ اسی یوزر کے کارٹ میں پہلے سے موجود تو نہیں
         const isProductAvailable = await addToCartModel.findOne({ productId, userId: currentUser });
 
         if (isProductAvailable) {
